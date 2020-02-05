@@ -14,10 +14,26 @@
                 <el-button type="primary" @click="onSubmit('elForm')">登录</el-button>
             </el-form-item>
         </el-form>
+
+        <h3>Wan表单</h3>
+        <hr>
+
+        <wan-form :model="formData" :rules="formRules">
+            <wan-form-item label="用户名" prop="username">
+                <wan-input v-model="formData.username"></wan-input>
+            </wan-form-item>
+            <wan-form-item label="密码" prop="password">
+                <wan-input type="password" v-model="formData.password"></wan-input>
+            </wan-form-item>
+        </wan-form>
+
         
     </div>
 </template>
 <script>
+import WanForm from './WanForm.vue'
+import WanFormItem from './WanFormItem.vue'
+import WanInput from './WanInput.vue'
 export default {
     data() {
         return {
@@ -34,6 +50,11 @@ export default {
                 ]
             }
         }
+    },
+    components: {
+        WanForm,
+        WanFormItem,
+        WanInput
     },
     methods: {
         onSubmit(form) {

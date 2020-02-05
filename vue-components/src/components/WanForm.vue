@@ -8,6 +8,13 @@
 
 <script>
 export default {
+    // provide 选项应该是一个对象或返回一个对象的函数。
+    // 该对象包含可注入其子孙的属性。
+    provide() {
+        return {
+            form: this
+        }
+    },
     props: {
         model: {
             type: Object,
@@ -15,7 +22,7 @@ export default {
         },
         rules: {
             type: Object,
-            default: Null
+            default: null
         }
     }
 }
