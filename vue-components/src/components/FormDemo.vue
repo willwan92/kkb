@@ -43,10 +43,12 @@ export default {
             },
             formRules: {
                 username: [
-                    { required: true, message: '请输入用户名', trigger: 'blur'}
+                    { required: true, message: '请输入用户名', trigger: 'blur'},
+                    { min: 3, max: 8, message: '长度在3-8个字符', trigger: 'input'}
                 ],
                 password: [
-                    { required: true, message: '请输入密码', trigger: 'blur'}
+                    { required: true, message: '请输入密码', trigger: 'blur'},
+                    { min: 6, max: 16, message: '长度在6-16个字符', trigger: 'input'}
                 ]
             }
         }
